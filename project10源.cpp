@@ -1,35 +1,44 @@
 #include<iostream>
+#include<string>
 using namespace std;
-
-int main()
+int indexof(const string s1, const string s2)
 {
-	char c;
-	int letters = 0, spaces = 0, digits = 0, others = 0;
-	cout << "请输入" << endl;
-	while ((c = getchar()) != '\n')
+	int len1 = s1.length();
+	int len2 = s2.length();
+	for (int i = 0; i <= len2 - len1; i++)
 	{
-		if (isalpha(c))
+		int k;
+		for (k = 0; k < len1; k++)
 		{
-			letters++;
+			if (s2[i + k] != s1[k])
+			{
+				break;
+			}
+			
 		}
-		else if (isspace(c))
+		if (k == len1)
 		{
-			spaces++;
-		}
-		else if (isdigit(c))
-		{
-			digits++;
-		}
-		else
-		{
-			others++;
+			return i;
 		}
 	}
-	cout << "英文字母个数" << letters << endl;
-	cout << "空格个数" << spaces << endl;
-	cout << "数字个数" << digits<<endl;
-	cout << "其他字符个数" << others << endl;
-
-	system("pause");
+	return -1;
+}
+int main()
+{
+	string s1;
+	cout << "Enter the first string:";
+	getline(cin, s1);
+	string s2;
+	cout << "Enter the second string:";
+	getline(cin, s2);
+	int zhi = indexof(s1, s2);
+	if (zhi == -1)
+	{
+		cout << "indexof(" << s1 << "," << s2 << ") is" << "\t" << zhi;
+		}
+	else
+	{
+		cout<< "indexof(" << s1 << "," << s2 << ") is" << "\t" << zhi;
+	}
 	return 0;
 }

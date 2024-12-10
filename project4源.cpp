@@ -1,17 +1,21 @@
-#include <iostream>
-#include <iomanip>
+#include<iostream>
 using namespace std;
+int digui(int i)
+{
+	if (i == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return (digui(i - 1) + 1) * 2;
+	}
+}
+int main()
+{
+	cout << digui(10) << endl;
 
-int main() {
-    unsigned int testUnint = 65534; 
-    cout << "output in unsigned int type: " << testUnint << endl;
-    cout << "output in char type: " << static_cast<char>(testUnint) << endl;
-    cout << "output in short type: " << static_cast<short>(testUnint) << endl; 
-    cout << "output in int type: " << static_cast<int>(testUnint) << endl;
-    cout << "output in double type: " << static_cast<double>(testUnint) << endl;
-    cout << "output in double type with precision 4: " << setprecision(4) << static_cast<double>(testUnint) << endl;
-    cout << "output in Hex unsigned int type: " << hex << testUnint << endl;
-    cout << "output in oct int type" << oct << testUnint << endl;
-    system("pause");
-    return 0;
+
+
+	return 0;
 }

@@ -1,14 +1,42 @@
 #include<iostream>
-#include <iomanip>
 using namespace std;
+bool panduan(int shuzu[],int p)
+{
+	for (int m = 0; m < p; m++)
+	{
+		if (shuzu[p] == shuzu[m])
+		{
+			return true;
 
+		}
+		
+	}
+	return false;
+}
 int main()
 {
-	double  hua = 0;
-	cout << "请输入华氏温度" << endl;
-	cin >> hua;
-	cout << fixed << setprecision(2) << (hua - 32) / 1.8 << endl;//此处忘记怎么设置精度查资料了
+	int shuzu[10];
+	cout << "Enter ten numbers:  ";
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> shuzu[i];
+	}
+	for (int k = 0; k < 10; k++)
+	{
+		if (k == 0)
+		{
+			cout << shuzu[k] << "  ";
+		}
+		else
+		{
+			if (panduan(shuzu, k) == false)
+			{
+				cout << shuzu[k] << "  ";
+			}
+		}
+	}
 
-	system("pause");
+
+
 	return 0;
 }

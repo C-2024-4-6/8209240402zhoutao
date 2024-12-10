@@ -1,17 +1,34 @@
 #include<iostream>
+#include<string>
 using namespace std;
-
+void count(const char s[], int counts[])
+{
+	for (int i = 0; i < strlen(s); i++)
+	{
+		if (isalpha(s[i]))
+		{
+			char lowerChar = tolower(s[i]);
+			counts[lowerChar - 'a']++;
+		}
+	}
+}
 int main()
 {
-	for (int i = 0; i < 5; i++)
+	char str[100];
+	cout << "Please enter:";
+	cin.getline(str, 100);
+	int counts[26] = { 0 };
+	count(str, counts);
+	cout << "times:" << endl;
+	for (int i = 0; i < 26; i++)
 	{
-		for (int k = 0; k < i+1; k++)
+		if (counts[i] != 0)
 		{
-			cout << '*';
+			cout << static_cast<char>('a' + i) << ":" << counts[i] <<"times"<< endl;
 		}
-		cout<<endl;
 	}
 
-	system("pause");
+
+
 	return 0;
 }

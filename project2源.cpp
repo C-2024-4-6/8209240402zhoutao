@@ -1,24 +1,45 @@
 #include<iostream>
 using namespace std;
+bool is_prime(int num)
+{
+	if(num<2)
+	{
+		return false;
+	}
+	else
+	{
+		for (int i = 2; i * i <= num; i++)
+		{
+			if (num % i == 0)
+			{
+				return false;
+			}
+			
+		}
+		return true;
+	}
 
+}
 int main()
 {
-	int r = 0;
-	cout << "ÇëÊäÈëÔ²×¶µ×µÄ°ë¾¶"<<endl;
-	cin >> r;
-	int h = 0;
-	cout << "ÇëÊäÈëÔ²×¶µÄ×¶¸ß" << endl;
-	cin >> h;
-	const double pi = 3.14;
-	double v = 0;
-	v = (pi * r * r * h) / 3;
-	cout << "Ô²×¶µÄÌå»ýÎª" << v << endl;
-
+	int ik=0;
+	for (int a = 2; ik<200; a++)
+	{
+		if (is_prime(a) ==true)
+		{
+			cout << a << '\t';
+			ik++;
+			if (ik % 10 == 0 && ik != 0)
+			{
+				cout << endl;
+			}
+		}
 	
+	}
 
 
 
 
-	system("pause");
+
 	return 0;
 }

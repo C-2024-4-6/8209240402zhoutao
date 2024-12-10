@@ -1,35 +1,26 @@
 #include<iostream>
 using namespace std;
-
-int main()
+int jia[100] = {};
+void xuesheng(int diji)
 {
-	double a = 0;
-	cout << "请输入边长" << endl;
-	cin >> a;
-	double b= 0;
-	cout << "请输入边长" << endl;
-	cin >> b;
-	double c = 0;
-	cout << "请输入边长" << endl;
-	cin >> c;
-	if (a + b > c && a + c > b && b + c > a)
+	for (int k = 0; k <= (100 - diji) / (diji ); k++)
 	{
-		cout << "可以构成三角形" << endl;
-		cout<<"   周长为" << a + b + c << endl;
-		if (a == b || a == c || b == c)
-		{
-			cout << "这是等腰三角形" << endl;
+		jia[diji - 1 + k * (diji )] += 1;
 	}
-		else
-		{
-			cout << "这不是等腰三角形" << endl;
-		}
-	}
-	else
-	{
-		cout << "这不构成三角形" << endl;
-	}
+}
 
-	system("pause");
+	int main()
+{
+		for (int m = 2; m < 101; m++)
+		{
+			xuesheng(m);
+		}
+		for (int n = 0; n < 100; n++)
+		{
+			if (jia[n] % 2 == 0)
+			{
+				cout << n+1 << "  ";
+			}
+		}
 	return 0;
 }

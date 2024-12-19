@@ -1,19 +1,40 @@
 #include<iostream>
-#include"mytemperarure1.h"
 using namespace std;
+class cft
+{
+private:
+	double length;
+	double height;
+	double width;
+public:
+	
+	void set()
+	{
+			cout << "Please enter the length :" << endl;
+			cin >> length;
+			cout << "Please enter the width :" << endl;
+			cin >> width;
+			cout << "Please enter the height :" << endl;
+			cin >> height;
+	}
+	int get()
+	{
+		return length * width * height;
+	}
+};
+
 
 int main()
 {
-	double a;
-	cout << "请输入摄氏温度" << endl;
-	cin >> a;
-	cout <<"对应的华氏温度为："<< celsius_to_fah(a) << endl;
-	cout << "请输入华氏温度" << endl;
-	double b;
-	cin >> b;
-	cout << "对应的摄氏温度为：" << fahrenheit_to_cels(b) << endl;
-
-
+	cft cft1;
+	cft cft2;
+	cft cft3;
+	cft1.set();
+	cft2.set();
+	cft3.set();
+	cout << "the volume of the first       " << cft1.get() << endl;
+	cout << "the volume of the second        " << cft2.get() << endl;
+	cout << "the volume of the third        " << cft3.get() << endl;
 
 	return 0;
 }

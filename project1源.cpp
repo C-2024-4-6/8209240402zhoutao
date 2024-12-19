@@ -1,27 +1,35 @@
 #include<iostream>
 using namespace std;
-int zdgys(int a, int b)
+class Time           
 {
-	while(b!=0)
+private:     
+	int hour;
+	int minute;
+	int sec;
+public:
+	void settime(int HOUR, int MINUTE,int SECOND)
 	{
-		int temp1 = a > b ? a : b;
-		int temp2 = a <= b ? a : b;
-		a = temp1; b = temp2;
-		 b= a % b;
-		 a = temp2;
+		hour = HOUR;
+		minute = MINUTE;
+		sec = SECOND;
 	}
-	return a;
-	
-}
+	void setout()
+	{
+		cout << hour << ":" << minute << ":" << sec << endl;
+	}
+};
 int main()
 {
-	int m , n;
-	cout << "请输入第一个值为" << endl;
-	cin >> m;
-	cout << "请输入第二个值为：" << endl;
-	cin >> n;
-	int gys = zdgys(m, n);
-	cout << "最大公因数为：" << gys << endl;
-	cout << "最小公倍数为：" << m * n / gys << endl;
+	Time t1;    
+	int a, b, c;
+	cout << "Please enter the hour:"<<endl;
+	cin >> a;
+	cout << "Please enter the minute:"<<endl;
+	cin >> b;
+	cout << "Please enter the second" << endl;;
+	cin >> c;
+	t1.settime(a, b, c);
+	t1.setout();
+
 	return 0;
 }

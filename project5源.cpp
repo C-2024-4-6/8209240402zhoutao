@@ -1,42 +1,37 @@
 #include<iostream>
 using namespace std;
-bool panduan(int shuzu[],int p)
+class point
 {
-	for (int m = 0; m < p; m++)
+private:
+	int x;
+	int y;
+public:
+	point(int a, int b)
 	{
-		if (shuzu[p] == shuzu[m])
-		{
-			return true;
-
-		}
-		
+		x = a;
+		y = b;
 	}
-	return false;
-}
+	void setpoint(int i,int j)
+	{
+		x += i;
+		y += j;
+	}
+	void display()
+	{
+		cout << "x=" << x << endl;
+		cout << "y=" << y << endl;
+	}
+};
 int main()
 {
-	int shuzu[10];
-	cout << "Enter ten numbers:  ";
-	for (int i = 0; i < 10; i++)
-	{
-		cin >> shuzu[i];
-	}
-	for (int k = 0; k < 10; k++)
-	{
-		if (k == 0)
-		{
-			cout << shuzu[k] << "  ";
-		}
-		else
-		{
-			if (panduan(shuzu, k) == false)
-			{
-				cout << shuzu[k] << "  ";
-			}
-		}
-	}
-
-
-
+	int m;
+	cout << "please enter i:" << endl;
+	cin >> m;
+	int n;
+	cout << "please enter j:" << endl;
+	cin >> n;
+	point point1(60, 80);
+	point1.setpoint(m, n);
+	point1.display();
 	return 0;
 }
